@@ -1,9 +1,13 @@
 import React, {useMemo, useState, useCallback} from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import templatesData from '@site/src/data/templates.json';
 import integrationsData from '@site/src/data/integrations.json';
 import styles from './index.module.css';
+
+const TEMPLATES_SOURCE_URL =
+  'https://github.com/vectorize-io/hindsight/edit/main/hindsight-bank-templates/templates.json';
 
 const CATEGORIES = ['all', 'chat', 'coding', 'assistant'] as const;
 type Category = (typeof CATEGORIES)[number];
@@ -207,8 +211,16 @@ export default function TemplateGallery(): React.ReactElement {
           <div className={styles.submitBannerContent}>
             <h3 className={styles.submitBannerTitle}>Have a template to share?</h3>
             <p className={styles.submitBannerText}>
-              Add your template to the gallery by editing templates.json on GitHub.
+              Contribute it to the community. Open a pull request and add your entry to the
+              bank templates source package.
             </p>
+            <Link
+              href={TEMPLATES_SOURCE_URL}
+              className={styles.submitButton}
+              target="_blank"
+              rel="noopener noreferrer">
+              Submit a template &rarr;
+            </Link>
           </div>
         </div>
       </div>

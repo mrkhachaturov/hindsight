@@ -2553,6 +2553,9 @@ jobs:
     - name: Run generate-docs-skill
       run: ./scripts/generate-docs-skill.sh
 
+    - name: Run generate-templates
+      run: ./scripts/generate-templates.sh
+
     - name: Run lint
       run: ./scripts/hooks/lint.sh
 
@@ -2568,6 +2571,7 @@ jobs:
           echo "  ./scripts/generate-openapi.sh"
           echo "  ./scripts/generate-clients.sh"
           echo "  ./scripts/generate-docs-skill.sh"
+          echo "  ./scripts/generate-templates.sh"
           echo "  ./scripts/hooks/lint.sh"
           echo ""
           git diff --stat
